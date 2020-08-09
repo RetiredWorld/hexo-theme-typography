@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'No tests' && exit",
-    "build": "node-sass raw/scss -o source/css --output-style compressed && postcss source/css -u autoprefixer -r",
-    "scss-compile": "npm run build",
+    "build:sass": "node-sass raw/scss -o source/css --output-style compressed && postcss source/css -u autoprefixer -r",
+    "build:js": "webpack --config webpack.config.js",
+    "build": "npm run build:js && npm run build:sass",
     "watch": "node-sass -w raw/scss -o source/css"
   },
   "repository": {
@@ -26,11 +27,12 @@
   "homepage": "https://github.com/SumiMakito/hexo-theme-typography/README.md",
   "devDependencies": {},
   "dependencies": {
-    "scss-compile": "^0.1.7",
-    "yamljs": "^0.3.0",
     "autoprefixer": "^9.2.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.14.1",
     "postcss": "^7.0.5",
-    "postcss-cli": "^6.0.0"
+    "postcss-cli": "^6.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "yamljs": "^0.3.0"
   }
 }
