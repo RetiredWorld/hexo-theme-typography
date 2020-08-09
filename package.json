@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'No tests' && exit",
-    "build:sass": "node-sass raw/scss -o source/css --output-style compressed && postcss source/css -u autoprefixer -r",
+    "build:sass": "node-sass raw/scss -o source/css --sourcemap=none --output-style=compressed && postcss source/css -u autoprefixer -r --no-map",
     "build:js": "webpack --config webpack.config.js",
     "build": "npm run build:js && npm run build:sass",
     "watch": "node-sass -w raw/scss -o source/css"

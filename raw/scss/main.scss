@@ -1,0 +1,9 @@
+// to mixin all vendors may reduce compile effect
+// but can help decrease http requests on css
+
+@import
+"vendors/bootstrap.min";
+
+@import "animation";
+
+@import "style";
